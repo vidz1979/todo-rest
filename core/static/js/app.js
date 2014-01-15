@@ -10,10 +10,10 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/list', {
-    templateUrl: 'https://todo-rest.s3.amazonaws.com/partials/list.html', 
+    templateUrl: '/partials/list.html', 
     controller: 'ListCtrl'});
   $routeProvider.when('/edit/:id', {
-    templateUrl: 'https://todo-rest.s3.amazonaws.com/partials/detail.html', 
+    templateUrl: '/partials/detail.html', 
     controller: 'DetailCtrl'});
   $routeProvider.otherwise({redirectTo: '/list'});
 }]);
