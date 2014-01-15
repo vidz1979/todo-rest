@@ -3,3 +3,6 @@ include/
 lib/
 local/
 *.sqlite3
+.env
+*.pyc
+*~
