@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
@@ -10,7 +9,11 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/list', {templateUrl: 'static/partials/list.html', controller: 'ListCtrl'});
-  $routeProvider.when('/edit/:id', {templateUrl: 'static/partials/detail.html', controller: 'DetailCtrl'});
+  $routeProvider.when('/list', {
+    templateUrl: 'https://todo-rest.s3.amazonaws.com//partials/list.html', 
+    controller: 'ListCtrl'});
+  $routeProvider.when('/edit/:id', {
+    templateUrl: 'https://todo-rest.s3.amazonaws.com//partials/detail.html', 
+    controller: 'DetailCtrl'});
   $routeProvider.otherwise({redirectTo: '/list'});
 }]);
