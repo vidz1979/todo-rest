@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.conf.urls import patterns, url, include
 from rest_framework.routers import DefaultRouter
 from core import views
+from django.conf import settings
 
 admin.autodiscover()
 

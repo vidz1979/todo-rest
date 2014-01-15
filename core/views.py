@@ -34,3 +34,4 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 
 def tasks(request):
     return render(request, 'tasks.html')
+
