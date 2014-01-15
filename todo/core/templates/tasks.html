@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="{% static "css/app.css" %}"/>
+</head>
+<body>
+
+  <div ng-view></div>
+
+  <script src="{% static "js/angular/angular.js" %}"></script>
+  <script src="{% static "js/angular/angular-route.js" %}"></script>
+  <script src="{% static "js/angular/angular-resource.js" %}"></script>
+  <script src="{% static "js/app.js" %}"></script>
+  <script src="{% static "js/services.js" %}"></script>
+  <script src="{% static "js/controllers.js" %}"></script>
+  <script src="{% static "js/filters.js" %}"></script>
+  <script src="{% static "js/directives.js" %}"></script>
+</body>
+</html>

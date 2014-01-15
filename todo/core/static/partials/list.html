@@ -1,0 +1,10 @@
+<h1>Lista de tarefas</h1>
+<div ng-repeat='task in data' ng-class='{done: task.done}'>
+    <input type='checkbox' ng-model='task.done' ng-change='updateDone(task)'>
+    <label ng-click="editTask(task)">{{task.title}}</label>
+    <button ng-click="removeTodo(task)">X</button>
+    </input>
+</div>
+<form ng-submit='addTask()'>
+    <input type="text" placeholder="Adicione uma tarefa" ng-model="taskTitle"/>
+</form>
