@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'rest_framework',
+    'storages',
     'core',
 )
 
@@ -83,19 +84,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_ROOT = BASE_DIR.child('staticfiles')
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    BASE_DIR.child('static'),
-)
+if not DEBUG:
+    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+    STATIC_URL = S3_URL
+else:
+    STATIC_URL = '/static/'
 
 APPEND_SLASH = False
 
-#import os
-#PROJECT_PATH = os.path.dirname(os.path.abspath('/Dev/todo-rest-env2/todo-rest/todo/settings.py'))
-#STATIC_ROOT = 'staticfiles'
-#STATIC_URL = '/static/'
-#os.path.join(PROJECT_PATH, 'static')
