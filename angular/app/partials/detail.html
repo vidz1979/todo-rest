@@ -1,0 +1,21 @@
+<form ng-submit='updateTask()'>
+    <div>
+        <label>Título</label>
+        <input ng-model='task.title'>
+    </div>
+    <div>
+        <label>Feito</label>
+        <input type='checkbox' ng-model='task.done'>
+    </div>
+    <div>
+        <label>Descrição</label>
+        <input ng-model='task.description'>
+    </div>
+    <div>
+        <label>Data criação</label>
+        <span>{{task.created_at}}</span>
+    </div>
+    <button type='submit'>Salvar</button>
+    <button ng-click='cancelEdit()'>Cancelar</button>
+    <button ng-click='removeTask()'>Remover</button>
+</form>
