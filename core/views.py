@@ -3,7 +3,6 @@ from rest_framework import permissions
 from .serializers import TaskSerializer, UserSerializer, Task, User
 from .permissions import IsOwner
 from rest_framework import viewsets
-from django.shortcuts import render
 
 class TaskViewSet(viewsets.ModelViewSet):
     """
@@ -31,7 +30,4 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-def tasks(request):
-    return render(request, 'tasks.html')
 
